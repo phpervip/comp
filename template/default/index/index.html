@@ -1,0 +1,127 @@
+{extend name="public/base"/}
+{block name="body"}
+<div id="myCarousel" class="carousel slide">
+	<ol class="carousel-indicators">
+		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		<li data-target="#myCarousel" data-slide-to="1"></li>
+		<li data-target="#myCarousel" data-slide-to="2"></li>
+	</ol>
+	<div class="carousel-inner">
+		<div class="item active" style="background:#223240">
+			<img src="__IMG__/slide1.png" alt="宁波APP开发 杭州APP开发">
+		</div>
+		<div class="item" style="background:#DE2A2D;">
+			<img src="__IMG__/slide2.png" alt="宁波微信开发 杭州微信开发">
+		</div>
+		<div class="item" style="background:#DE2A2D;">
+			<img src="__IMG__/slide3.png" alt="react native 开发原生APP">
+		</div>
+	</div>
+	<a href="#myCarousel" data-slide="prev" class="carousel-control left">
+		<span class="glyphicon glyphicon-chevron-left"></span>
+	</a>
+	<a href="#myCarousel" data-slide="next" class="carousel-control right">
+		<span class="glyphicon glyphicon-chevron-right"></span>
+	</a>
+</div>
+
+<div class="tab1">
+	<div class="container">
+		<h2 class="tab-h2">「为什么选择<?php echo (Config('company_site')['company'])?>」</h2>
+		<p class="tab-p">专业的服务，让WEB及APP开发更方便，更快捷</p>
+		<div class="row">
+			<div class="col-md-6 col">
+				<div class="media">
+					<div class="media-left">
+						<img src="__IMG__/tab1-1.png" class="media-object" alt="">
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading">Brand website design</h4>
+						<p>高端品牌网站创计&nbsp;
+							移动手机网站建设&nbsp;
+							企业网站设计开发&nbsp;
+							响应式网站设计&nbsp;
+							HTML5网站设计&nbsp;
+							政府门户网站开发</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col">
+				<div class="media">
+					<div class="media-left">
+						<img src="__IMG__/tab1-2.png" class="media-object" alt="">
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading">Mobile customization</h4>
+						<p>手机网站建设&nbsp;
+							微官网建设&nbsp;
+							二次开发&nbsp;
+							微活动策划&nbsp;
+							APP应用开发&nbsp;
+							微内容托管</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col">
+				<div class="media">
+					<div class="media-left">
+						<img src="__IMG__/tab1-3.png" class="media-object" alt="">
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading">Integrated marketing</h4>
+						<p>微营销&nbsp;
+							问答营销&nbsp;
+							危机公关&nbsp;
+							软文发布&nbsp;
+							百科维护&nbsp;
+							SEO优化</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col">
+				<div class="media">
+					<div class="media-left">
+						<img src="__IMG__/tab1-4.png" class="media-object" alt="">
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading">Electronic commerce</h4>
+						<p>官方商城开发&nbsp;
+							O2O平台开发&nbsp;
+							互联网金融平台&nbsp;
+							在线教育平台开发&nbsp;
+							电商网站开发&nbsp;
+							服装行业平台开发&nbsp;
+							旅游酒店预订</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{/block}
+{block name="script"}
+<script type="text/javascript">
+	//轮播自动播放
+	$('#myCarousel').carousel({
+		//自动4秒播放
+		interval : 3000,
+	});
+	//设置文字垂直居中，谷歌浏览器加载图片的顺序问题，导致高度无法获取
+	$(window).load(function () {
+		$('.text').eq(0).css('margin-top', ($('.auto').eq(0).height() - $('.text').eq(0).height()) / 2 + 'px');
+	});
+	
+
+	$(window).resize(function () {
+		$('.text').eq(0).css('margin-top', ($('.auto').eq(0).height() - $('.text').eq(0).height()) / 2 + 'px');
+	});
+
+	$(window).load(function () {
+		$('.text').eq(1).css('margin-top', ($('.auto').eq(1).height() - $('.text').eq(1).height()) / 2 + 'px');
+	});
+
+	$(window).resize(function () {
+		$('.text').eq(1).css('margin-top', ($('.auto').eq(1).height() - $('.text').eq(1).height()) / 2 + 'px');
+	});
+</script>
+{/block}
