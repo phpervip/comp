@@ -52,7 +52,6 @@ class Content extends Fornt {
 	//模块列表页
 	public function lists($id = '', $name = '') {
 
-
 		if ($name) {
 			$id = db('Category')->where(array('name' => $name))->getField('id');
 		}

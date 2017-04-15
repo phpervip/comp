@@ -103,7 +103,14 @@ return array(
 	'view_replace_str'       => array(
 		'__ADDONS__' => BASE_PATH . '/addons',
 		'__PUBLIC__' => BASE_PATH . '/public',
+        '__APP_PATH__'=>BASE_PATH . '/application',
 	),
-    'company_site' => array('company'=>'易好科技','icp'=>'浙ICP备13006622号','copyright'=>'宁波易好电子商务有限公司 Yihao ltd','address'=>'杭州东方文化园','url'=>'http://www.aiyi.info'),
+    'company_site' => array(
+        'company'=>'易莲科技',
+        'icp'=>'浙ICP备000001号',
+        'copyright'=>'杭州易莲科技有限公司 YiLian ltd',
+        'address'=>'杭州东方文化园',
+        'url'=>'http://www.yyii.info'
+    ),
 
 );

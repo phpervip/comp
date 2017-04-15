@@ -13,13 +13,13 @@ return array(
 	// 数据库连接DSN配置
 	'dsn'         => '',
 	// 服务器地址
-	'hostname'    => '127.0.0.1',
+	'hostname'    => 'rdsud0som5h0ebqz5nr4o.mysql.rds.aliyuncs.com',
 	// 数据库名
-	'database'    => 'comp',
+	'database'    => 'aiyi',
 	// 数据库用户名
-	'username'    => 'root',
+	'username'    => 'wanghaibin',
 	// 数据库密码
-	'password'    => '123456',
+	'password'    => 'Wang63350837',
 	// 数据库连接端口
 	'hostport'    => '3306',
 	// 数据库连接参数

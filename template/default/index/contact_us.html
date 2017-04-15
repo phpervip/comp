@@ -1,0 +1,61 @@
+{extend name="public/base"/}
+{block name="body"}
+<div class="contact-box">
+    <div class="warp">
+        <div class="title">
+            CONTACT US
+        </div>
+        <div class="contact-list">
+            <ul>
+                <li><a href="http://wpa.qq.com/msgrd?v=3&uin=707479167&site=qq&menu=yes" title="qq" target="_blank"><i class="fa fa-qq"></i>QQ：812132838</a></li>
+                <li><a href="mailto:molong@tensent.cn" title="邮件" target="_blank"><i class="fa fa-envelope"></i>邮件：812132838@qq.com </a></li>
+                <li><a title="易莲科技微信号"><i class="fa fa-wechat"></i>微信：易莲科技</a></li>
+                <li><a title="tel:18267165221"><i class="fa fa-phone"></i>电话: 18267165221</a></li>
+                <div class="clearfix"></div>
+            </ul>
+        </div>
+
+        <div class="map">
+            <div id="allmap"></div>
+        </div>
+    </div>
+</div>
+{/block}
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=H6lSjf3ENz02sdnInGFMh8g8"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
+<link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
+<script type="text/javascript">
+    // 百度地图API功能
+    var map = new BMap.Map("allmap");
+    var point = new BMap.Point(115.99, 28.723);
+    map.centerAndZoom(point, 15);
+
+    //创建小狐狸
+    var myIcon = new BMap.Icon("/public/images/fox.gif", new BMap.Size(300,157));
+    var marker = new BMap.Marker(point,{icon:myIcon});  // 创建标注
+
+    map.addEventListener("tilesloaded", function(e){
+        searchInfoWindow.open(point);
+    });
+    var content = '<div style="margin:0;line-height:20px;padding:2px;">' +
+        '<img src="/public/images/logo-foot.png" alt="" style="float:right;zoom:1;overflow:hidden;width:100px;margin-left:3px;"/>' +
+        '电话：(+86)18970867739<br/>邮箱：molong@tensent.cn<br/>地址：江西省南昌市高新技术产业开发区火炬五路899号（江西省国家级大学生创业创新示范基地）' +
+        '</div>';
+
+    //创建检索信息窗口对象
+    var searchInfoWindow = null;
+    searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {
+        title  : "易莲科技",      //标题
+        width  : 320,             //宽度
+        height : 105,              //高度
+        panel  : "panel",         //检索结果面板
+        enableAutoPan : true,     //自动平移
+        searchTypes   :[
+            BMAPLIB_TAB_SEARCH,   //周边检索
+            BMAPLIB_TAB_TO_HERE,  //到这里去
+            BMAPLIB_TAB_FROM_HERE //从这里出发
+        ]
+    });
+
+    map.addOverlay(marker);              // 将标注添加到地图中
+</script>
